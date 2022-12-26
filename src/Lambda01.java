@@ -19,7 +19,7 @@ public class Lambda01 {
               Terminal operasyonlarindan biri kullanilana kadar akis devam eder.
           7)  Javada Lambda fonksiyonları sadece Fonksiyonel interface'ler ile kullanılabilir.
               Sadece bir adet abstract metodu olan interface'lere fonksiyonel interface denilir.
-              Kullanıcı isterse kendi fonksiyonel interface'ini yazabilir. Ama Javada hali hazırda
+              Kullanıcı isterse kendi fonksiyonel interface'ini yazabilir. Ama Java'da hali hazırda
               Consumer, Function, Supplier, Predicate gibi tanımlanmış interfaceler bulunmaktadır.
               Ayrıca bu interface'leri parametre olarak alabilen High Order Function (HOF)'lar da bulunmaktadır.
               forEach(), map(), filter(), reduce() gibi HOF'lar fonksiyonel interfaceler ile çalıştığı için
@@ -31,9 +31,9 @@ public class Lambda01 {
 filter: bizim belirteceğimiz koşullar doğrultusunda filtreleme işlemi yapmamıza yarayan bir yapıdır.
 map: her bir eleman üzerinde işlem yapmamıza ve başka elemanlara dönüştürmemize imkan sağlar
 distinct: tekrarlı elemanları sadece bir kere akısa sokup tekrarsiz hale getirir
+limit: sınırlandıran bir metoddur. Parametre olarak vereceğimiz rakamla sen bize şu kadarını göster diyoruz.
 sorted: veri setini belirli bir parametreye göre sıralar. 2 türü bulunmaktadır.
         Biri, parametre almaz küçükten büyüğe şekilde sıralar, digeri bizim belirlemiş olduğumuz parametreye göre sıralar.
-limit: sınırlandıran bir metoddur. Parametre olarak vereceğimiz rakamla sen bize şu kadarını göster diyoruz.
 forEach: veriyi tek tek tüketmek için oluşturulmuş bir yapıdır.
 collect: nesneleri başka biçimdeki nesneye veri yapısına dönüştürmek için kullanılır.
 reduce: Indirgeme demektir, elemanları teker teker işler. Bir önceki adımda elde edilen sonuç, bir sonraki elemanla işlemle tutulur
@@ -74,15 +74,11 @@ count: Stream içerisinde bulunan toplam veri sayısını öğrenmemize yarar.
 
     //TASK: "Functional Programming" kullanarak list elemanlarını aynı satirda aralarında bosluk olacak sekilde print ediniz.
     public static void printElFunctional(List<Integer> sayi){
-        sayi.
-                stream().
-                forEach((t)-> System.out.print(t + " ")); //lambda expression
+        sayi.stream().forEach((t)-> System.out.print(t + " ")); //lambda expression
     }
     //daha iyi cozumu asagidaki
     public static void printElFunctional1(List<Integer> sayi){
-        sayi.
-                stream().
-                forEach(System.out::print); //method reference
+        sayi.stream().forEach(System.out::print); //method reference
     }
     //fakat yukaridaki method sayilar arasinda bosluk birakmiyor o sebeple
     //Kendimiz method olusturalim
@@ -91,9 +87,7 @@ count: Stream içerisinde bulunan toplam veri sayısını öğrenmemize yarar.
     }
 
     public static void printElFunctional2(List<Integer> sayi){
-        sayi.
-                stream().
-                forEach(Lambda01::yazdir); //method reference
+        sayi.stream().forEach(Lambda01::yazdir); //method reference
     }
 
     //TASK: Structured Programming ile list elemanlarinin cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
@@ -107,10 +101,7 @@ count: Stream içerisinde bulunan toplam veri sayısını öğrenmemize yarar.
 
     //TASK: Functional Programming ile list elemanlarinin cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
     public static void printCiftElFunctional(List<Integer> sayi){
-        sayi.
-                stream().
-                filter(t-> t%2==0).
-                forEach(Lambda01::yazdir); //lambda expression
+        sayi.stream().filter(t-> t%2==0).forEach(Lambda01::yazdir); //lambda expression
     }
 
     //yukaridaki task'in filter() kismini method reference ile yapalim
@@ -119,25 +110,17 @@ count: Stream içerisinde bulunan toplam veri sayısını öğrenmemize yarar.
     }
 
     public static void printCiftElFunctional1(List<Integer> sayi){
-        sayi.
-                stream().
-                filter(Lambda01::ciftBul).
-                forEach(Lambda01::yazdir); //method reference
+        sayi.stream().filter(Lambda01::ciftBul).forEach(Lambda01::yazdir); //method reference
     }
+
     //TASK: Functional Programming ile list elemanlarinin 34 den kucuk ve cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
     public static void printCiftOtKucFunctional(List<Integer> sayi){
-        sayi.
-                stream().
-                filter(t-> t%2==0 && t<34).
-                forEach(Lambda01::yazdir);
+        sayi.stream().filter(t-> t%2==0 && t<34).forEach(Lambda01::yazdir);
     }
 
     //Task: Functional Programming ile list elemanlarinin 34 den buyuk veya cift olanlarini ayni satirda aralarina bosluk birakarak print ediniz.
     public static void printCiftOtBuyFunctional(List<Integer> sayi){
-        sayi.
-                stream().
-                filter(t-> t%2==0 || t>34).
-                forEach(Lambda01::yazdir);
+        sayi.stream().filter(t-> t%2==0 || t>34).forEach(Lambda01::yazdir);
     }
 
     public static void yazdir(String a){

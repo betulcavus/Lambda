@@ -60,7 +60,7 @@ public class Lambda02 {
     public static void structuredMaxElBul(List<Integer> sayi){
         int max = Integer.MIN_VALUE;
         System.out.println("max = " + max); // max.soutv yazarsan yandakini verir ugrastirmaz
-        for(int i=0; i<sayi.size();i++) {
+        for(int i=0; i<sayi.size(); i++) {
             if(sayi.get(i)>max) max = sayi.get(i);
         }
         System.out.println("en büyük sayı : " + max);
@@ -87,7 +87,7 @@ public class Lambda02 {
         System.out.println(sayi.stream().filter(Lambda01::ciftBul).reduce(Math::multiplyExact));
     }
 
-    // Task-8 : List'teki elemanlardan en kucugunu  print ediniz.
+    // Task-8 : List'teki elemanlardan en kucugunu print ediniz.
     public static void minBul(List<Integer> sayi){
         System.out.println(sayi.stream().reduce(Integer::min));
     }

@@ -19,6 +19,7 @@ public class Lambda05 {
         istenenX(3, 2); //3, 9
 
         istenilenSayininFaktoriyeli(5); //120
+
     }
 
 //TASK 01 --> Structured Programming ve Functional Programming ile 1'den x'e kadar (x dahil)
@@ -33,7 +34,7 @@ public class Lambda05 {
         return toplam;
     }
 
-// Functional
+//Functional
     public static int toplaCincix(int x) {  // List<Integer> x ---> x.stream().
         return IntStream. // int değerlerde bir akış sağlar
                 range(1,x+1). // range(a,b) --> a dan b'ye kadar ( b dahil değil) int değerler akısa alındı

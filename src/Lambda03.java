@@ -27,13 +27,13 @@ public class Lambda03 {
         sonHarfeGore(menu); //kokorec guvec trilece kusleme waffle kunefe arabasi havucDilim
     }
 
-// Task -1 : List elemanlarini alafabetik buyuk harf ve tekrarsiz print ediniz.
+// Task -1 : List elemanlarini alfabetik buyuk harf ve tekrarsiz print ediniz.
 
     public static void alfabetikBuyukTekrarsiz(List<String> yemek){
         yemek.stream().map(String::toUpperCase).sorted().distinct().forEach(t-> System.out.print(t + " "));
     }
 
-// Task -2 : list elemanlarinin character sayisini ters sirali olarak tekrarsiz print ediniz
+// Task -2 : List elemanlarinin character sayisini ters sirali olarak tekrarsiz print ediniz
 
     public static void tersBuyukTekrarsiz(List<String> ikram){
         ikram.stream().map(String::length).sorted(Comparator.reverseOrder()).distinct().forEach(t-> System.out.print(t + " "));
@@ -49,7 +49,7 @@ public class Lambda03 {
 //allMatch() --> tum  elemanlar sarti saglarsa true, en az bir eleman sarti saglamazsa false return eder.
 //noneMatch()--> hic bir sarti SAGLAMAZSA true, en az bir eleman sarti SAGLARSA false return eder.
 
-// Task-4 : List elemanlarinin karakter sayisini 7 ve 7 'den az olma durumunu kontrol ediniz.
+// Task-4 : List elemanlarinin karakter sayisini 7 ve 7'den az olma durumunu kontrol ediniz.
 
     public static void harfSayisi(List<String> ikram){
         System.out.println(ikram.stream().allMatch(t-> t.length()<=7) ? "List elemanlari 7 veya daha az harften olusuyor" : "List elemanlari 7 harften buyuk");
